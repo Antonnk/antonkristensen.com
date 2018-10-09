@@ -11,6 +11,8 @@
  */
 @tailwind preflight;
 
+@import 'fonts';
+
 a {
 	@apply no-underline text-pink font-bold;
 }
@@ -51,6 +53,7 @@ a {
 @tailwind utilities;
 
 .noice-bg {
+	background-color: config('colors.blue');
 	background: url('/assets/images/noice-bg.png');
 }
 
