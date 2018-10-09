@@ -1,0 +1,176 @@
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/preflight";
+ */
+@tailwind preflight;
+
+a {
+	@apply no-underline text-pink font-bold;
+}
+
+/**
+ * This injects any component classes registered by plugins.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/components";
+ */
+@tailwind components;
+
+/**
+ * Here you would add any of your custom component classes; stuff that you'd
+ * want loaded *before* the utilities so that the utilities could still
+ * override them.
+ *
+ * Example:
+ *
+ * .btn { ... }
+ * .form-input { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "components/buttons";
+ * @import "components/forms";
+ */
+
+/**
+ * This injects all of Tailwind's utility classes, generated based on your
+ * config file.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/utilities";
+ */
+@tailwind utilities;
+
+.noice-bg {
+	background: url('/assets/images/noice-bg.png');
+}
+
+.name, .skill {
+	@apply font-display;
+	font-size: 2rem;
+
+	small {
+		@apply font-serif;
+		font-size: 1rem;
+	}
+}
+
+.from {
+	@apply font-display mb-6;
+	font-size: 1.5rem;
+
+	small {
+		@apply font-serif;
+		font-size: 1rem;
+	}
+}
+
+.about {
+	max-width: 35ch;
+}
+
+.bottom-graphic {
+	transform: scale(.3);
+	transform-origin: 100% 100%;
+}
+
+@screen sm {
+	.name {
+		height: 170px;
+		width: 50%;
+	}
+
+	.skill {
+		margin-top: 35px;
+	}
+}
+
+@screen md {
+	.bottom-graphic {
+		transform: scale(.4);
+	}
+
+	.name, .skill {
+		font-size: 3rem;
+	}
+
+	.name {
+		height: 220px;
+		width: auto;
+		position: relative;
+		margin-bottom: 80px;
+
+		&::after {
+		    content: "";
+		    display: block;
+		    height: 13px;
+		    width: 13px;
+		    @apply bg-white;
+		    position: absolute;
+		    right: -32px;
+		    bottom: 15px;
+		    border-radius: 100px;
+		}
+	}
+
+	.skill {
+		margin-top: 112px;
+		margin-left: 50px;
+	}
+
+	.from {
+		margin-left: 50px;
+		font-size: 2.2rem;
+	}
+}
+
+@screen lg {
+	.bottom-graphic {
+		transform: scale(.6);
+	}
+
+	.name, .skill {
+		font-size: 4.5rem;
+	}
+
+	.name {
+		height: 333px;
+
+		&::after {
+		    right: -32px;
+		    bottom: 30px;
+		}
+	}
+
+	.skill {
+		margin-top: 170px;
+	}
+
+	.from {
+		margin-left: 50px;
+	}
+}
+
+/**
+ * Here you would add any custom utilities you need that don't come out of the
+ * box with Tailwind.
+ *
+ * Example :
+ *
+ * .bg-pattern-graph-paper { ... }
+ * .skew-45 { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "utilities/background-patterns";
+ * @import "utilities/skew-transforms";
+ */
