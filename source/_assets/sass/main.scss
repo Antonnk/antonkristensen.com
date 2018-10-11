@@ -13,14 +13,21 @@
 
 @import 'fonts';
 
-a {
-	@apply no-underline text-pink font-bold;
-	border-bottom: 3px solid config('colors.pink');
-}
-
-
 *::selection { 
 	@apply bg-salmon;
+}
+
+a::selection { 
+	@apply bg-white;
+}
+
+* {
+	transition: background-color .3s ease-in-out, background .3s ease-in-out, color .3s ease-in-out;
+}
+
+a {
+	@apply no-underline text-salmon font-bold;
+	border-bottom: 3px solid config('colors.salmon');
 }
 
 /**
@@ -60,7 +67,7 @@ a {
 
 .noice-bg {
 	background-color: config('colors.blue');
-	background: url('/assets/images/noice-bg.png');
+	background: url('/assets/images/noise-bg.png');
 }
 
 .name, .skill {
@@ -168,6 +175,45 @@ a {
 		margin-left: 50px;
 	}
 }
+
+svg#light-mode-toggle {
+  cursor: pointer;
+}
+
+
+svg#light-mode-toggle path#bulp {
+  transform-origin: 50% 50%;
+}
+
+body.light {
+	@apply text-blue;
+
+	svg#light-mode-toggle {
+		@apply text-blue;
+	}
+
+	&.noice-bg {
+		background-color: config('colors.white');
+		background: url('/assets/images/noise-bg-light.png');
+	}
+
+	.name::after {
+		@apply bg-blue;
+	}
+
+	.bottom-graphic svg path:first-of-type{
+		@apply text-salmon;
+	}
+
+	.bottom-graphic svg path:last-of-type{
+		@apply text-pink;	
+	}
+
+	a {
+		@apply text-pink;
+		border-color: config('colors.pink');
+	}
+}	
 
 /**
  * Here you would add any custom utilities you need that don't come out of the
