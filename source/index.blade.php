@@ -25,7 +25,9 @@
 					I build websites and webapps with Laravel and ES6 Javascript (Vuejs/React).
 					Passion for easy deletable code and lean solutions for complex problems.
 				</p>
-				<a href="mailto:hello@antonkristensen.com">hello@antonkristensen.com</a>
+				<a href="mailto:hello@antonkristensen.com">hello@antonkristensen.com</a><br>
+				<a rel="noopener" target="_black" href="https://codesandbox.io/u/Antonnk">Codesandbox</a>
+				<a rel="noopener" target="_black" href="https://codepen.io/Antonnk/">Codepen</a>
 			</div>
 		</div>
 	</div>

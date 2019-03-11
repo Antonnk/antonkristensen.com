@@ -21,14 +21,37 @@ a::selection {
 	@apply bg-white;
 }
 
-* {
-	transition: background-color .3s ease-in-out, background .3s ease-in-out, color .3s ease-in-out;
-}
+// * {
+// 	transition: background-image .2s ease-in-out, background-color .2s ease-in-out, background .2s ease-in-out, color .2s ease-in-out;
+// }
 
 a {
-	@apply no-underline text-salmon font-bold;
+	@apply no-underline text-salmon font-bold inline-block mb-1;
 	border-bottom: 3px solid config('colors.salmon');
 }
+
+hr {
+	@apply border-b border-salmon text-salmon opacity-75;
+	/* or your current background color */
+	background-color: config('colors.blue');
+	background: url('/assets/images/noise-bg.png');
+	position: relative;
+}
+
+hr::before {
+	font-size: 1rem;
+	color: inherit;
+	position: absolute;
+	content: attr(word);
+	display: block;
+	height: 1rem;
+	top: -.7rem;
+	left: 50%;
+	transform: translatex(-50%);
+	background: inherit;
+	padding: 0 .5rem;
+}
+
 
 /**
  * This injects any component classes registered by plugins.
@@ -126,6 +149,7 @@ a {
 		margin-bottom: 80px;
 
 		&::after {
+			//transition: background-color .3s ease-in-out;
 		    content: "";
 		    display: block;
 		    height: 13px;
